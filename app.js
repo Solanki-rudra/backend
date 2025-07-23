@@ -22,6 +22,16 @@ app.post('/create', (req, res) => {
     })
 })
 
+app.get('/file/:filename', (req, res) => {
+    const filename = req.params.filename
+    fs.readFile(`./files/${filename}`, 'utf-8', (err, data) => {
+        if(err){
+            console.log(err.message);
+        }
+        res.render('fileview', {filename, data})
+    })
+})
+
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
 })
