@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend tutorial along with sheriyans",
-  "main": "app3.js",
+  "main": "app4.js",
   "scripts": {
-    "dev": "nodemon app3.js"
+    "dev": "nodemon app4.js"
   },
   "author": "Rudra Solanki",
   "license": "ISC",
