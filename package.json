@@ -2,15 +2,18 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend tutorial along with sheriyans",
-  "main": "app1.js",
+  "main": "app3.js",
   "scripts": {
-    "dev": "nodemon app2.js"
+    "dev": "nodemon app3.js"
   },
   "author": "Rudra Solanki",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.4"
   },
   "devDependencies": {
