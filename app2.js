@@ -33,6 +33,19 @@ app.get('/delete/:id', async (req, res) => {
     res.redirect('/read');
 })
 
+app.get('/edit/:id', async (req, res) => {
+    const { id } = req.params;
+    const user = await userModel.findById(id);
+    res.render('update2', { user });
+})
+
+app.post('/update/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, email, image } = req.body;
+    await userModel.findByIdAndUpdate(id, {name, email, image});
+    res.redirect('/read');
+})
+
 app.listen(3000, () => {
     console.log('App2 is running on port 3000');
 });
