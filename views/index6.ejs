@@ -9,7 +9,7 @@
 
 <body class="bg-gray-900 flex items-center justify-center min-h-screen">
 
-    <!-- <form action="/register" method="post" class="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-sm space-y-4">
+    <form action="/register" method="post" enctype="multipart/form-data" class="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-sm space-y-4">
         <input type="text" name="name" placeholder="Name"
             class="w-full p-3 bg-gray-700 text-white rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             required />
@@ -25,13 +25,6 @@
         <input type="password" name="password" placeholder="Password"
             class="w-full p-3 bg-gray-700 text-white rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             required />
-        <button type="submit"
-            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition">
-            Submit
-        </button>
-    </form> -->
-
-    <form action="/upload-img" method="post" enctype="multipart/form-data" class="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-sm space-y-4">
         <input type="file" name="image"
             class="w-full p-3 bg-gray-700 text-white rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             required />

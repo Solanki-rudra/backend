@@ -11,7 +11,11 @@ const userSchema = new mongoose.Schema({
     posts:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'post'
-    }]
+    }],
+    profilePic:{
+        type: String,
+        default: 'default-profile.png'
+    }
 })
 
 const userModel = mongoose.model('user', userSchema)
