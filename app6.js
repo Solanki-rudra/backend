@@ -5,11 +5,26 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const { postModel } = require('./6_mini_project/models/post');
+const crypto = require('crypto');
+const path = require('path');
+const multer = require('multer');
 
 app.set('view engine', 'ejs');
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/images')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = crypto.randomBytes(12).toString('hex') + path.extname(file.originalname);
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+})
+
+const upload = multer({ storage: storage })
 
 app.get('/', (req, res) => {
     res.render('index6');
@@ -34,6 +49,10 @@ app.post('/register', async (req, res) => {
 
 app.get('/login', (req, res) => {
     res.render('login6');
+})
+
+app.post('/upload-img', upload.single('image'), async (req, res) => {
+    console.log(req.file);
 })
 
 app.post('/login', async (req, res) => {
